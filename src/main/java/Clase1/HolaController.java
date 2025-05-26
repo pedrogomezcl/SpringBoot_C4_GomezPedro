@@ -1,4 +1,4 @@
-package com.example.C4;
+package Clase1;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

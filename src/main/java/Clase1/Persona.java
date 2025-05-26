@@ -1,4 +1,4 @@
-package com.example.C4;
+package Clase1;
 
 public class Persona {
     private String nombre;
