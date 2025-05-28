@@ -38,4 +38,31 @@ public class PersonaController {
         return persona;
     }
 
+    //Actualizar una persona
+    @PutMapping("/{id}")
+    public Persona actualizarPersona(@PathVariable int id, @RequestBody Persona nueva){
+        for(Persona persona : personas) {
+            if(persona.getId()==id) {
+                persona.setNombre(nueva.getNombre());
+                persona.setApellido(nueva.getApellido());
+                persona.setEdad(nueva.getEdad());
+                return persona;
+            }
+        }
+        return null;
+    }
+
+    //Elminar Persona
+    @DeleteMapping("/{id}")
+    public String deletePersona(@PathVariable int id) {
+        for(Persona persona : personas) {
+            if(persona.getId()==id) {
+                personas.remove(persona);
+                return "Persona Eliminada!";
+            }
+        }
+        return "Persona no encontrada!";
+    }
+
+
 }
